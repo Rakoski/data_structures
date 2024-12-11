@@ -13,7 +13,7 @@ public class Stack<T> {
         stack.addHead(value);
     }
 
-    public void destack() {
-        stack.removeTail();
+    public void pop() {
+        stack.removeHead();
     }
 }

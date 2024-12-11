@@ -10,10 +10,10 @@ public class Queue<T> {
     }
 
     public void enqueue(T value) {
-        queue.addTail(value);
+        queue.addHead(value);
     }
 
     public void unqueue() {
-        queue.removeHead();
+        queue.removeTail();
     }
 }
