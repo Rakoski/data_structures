@@ -1,4 +1,4 @@
-package problems;
+package stacks.problems;
 
 import java.util.Map;
 import java.util.Stack;
