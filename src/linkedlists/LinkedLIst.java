@@ -24,7 +24,7 @@ public class LinkedLIst<T> {
         } else {
             Node<T> tempNode = head;
             while (tempNode.next != null && !Objects.equals(tempNode.value, referenceValue)) {
-                tempNode = tempNode.next;
+                tempNode = (Node<T>) tempNode.next;
             }
             newNode.next = tempNode.next;
             tempNode.next = newNode;
@@ -51,7 +51,7 @@ public class LinkedLIst<T> {
 
         Node<T> temp = head;
         while (temp.next != tail) {
-            temp = temp.next;
+            temp = (Node<T>) temp.next;
         }
         temp.next = null;
         tail = temp;
@@ -59,13 +59,13 @@ public class LinkedLIst<T> {
 
     public void removeHead() {
         if (head != null) {
-            head = head.next;
+            head = (Node<T>) head.next;
         }
     }
 
     public static class Node<T> {
         T value;
-        Node<T> next;
+        public Node<?> next;
 
         public Node(T value) {
             this.value = value;
