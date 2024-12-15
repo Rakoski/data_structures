@@ -4,6 +4,10 @@ import java.util.Objects;
 
 public class LinkedLIst<T> {
     private Node<T> head;
+    private Node<T> tail;
+    // arrays are stored together in memory
+    // linked lists (nodes) are stored separately in memory
+    // O (n)
 
     public void addHead(T value) {
         Node<T> node = new Node<>(value);
@@ -32,26 +36,25 @@ public class LinkedLIst<T> {
         if (head == null) {
             head = newNode;
         } else {
-            Node<T> tempNode = head;
-            while(tempNode.next != null) {
-                tempNode = tempNode.next;
-            }
-            tempNode.next = newNode;
+            tail.next = newNode;
         }
+        tail = newNode;
     }
 
     public void removeTail() {
-        if (head != null) {
-            if (head.next == null) {
-                head = null;
-            } else {
-                Node<T> temp = head;
-                while (temp.next.next != null) {
-                    temp = temp.next;
-                }
-                temp.next = null;
-            }
+        if (head == null) return;
+        if (head == tail) {
+            tail = null;
+            head = null;
+            return;
         }
+
+        Node<T> temp = head;
+        while (temp.next != tail) {
+            temp = temp.next;
+        }
+        temp.next = null;
+        tail = temp;
     }
 
     public void removeHead() {
@@ -60,7 +63,7 @@ public class LinkedLIst<T> {
         }
     }
 
-    public class Node<T> {
+    public static class Node<T> {
         T value;
         Node<T> next;
 
