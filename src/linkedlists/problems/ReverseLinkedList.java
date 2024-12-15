@@ -8,7 +8,7 @@ public class ReverseLinkedList {
         LinkedLIst.Node<?> curr = head;
 
         while (curr != null) {
-            LinkedLIst.Node<?> temp = curr.next;
+            LinkedLIst.Node<?> temp = curr.next; // temporary node to not meddle with curr and prev
             curr.next = prev;
             prev = curr;
             curr = temp;
