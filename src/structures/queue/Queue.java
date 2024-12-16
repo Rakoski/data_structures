@@ -1,6 +1,6 @@
-package queue;
+package structures.queue;
 
-import linkedlists.LinkedLIst;
+import structures.linkedlists.LinkedLIst;
 
 public class Queue<T> {
     private final LinkedLIst<T> queue;

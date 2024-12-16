@@ -1,6 +1,6 @@
-package stacks;
+package structures.stacks;
 
-import linkedlists.LinkedLIst;
+import structures.linkedlists.LinkedLIst;
 
 public class Stack<T> {
     private final LinkedLIst<T> stack;
