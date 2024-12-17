@@ -5,6 +5,7 @@ public class Fibonacci {
         if (num <= 1) {
             return num;
         }
+        //     fist branch recursion      second branch recursion
         return recursive(num - 1) + recursive(num - 2);
     }
 
