@@ -4,7 +4,7 @@ public class MergeSort {
     // log base 2 of n (n is the length of the array)
     // O(n.log.n) time complexity (or log n . n)
     public int[] mergeSort(int[] array, int start, int end) {
-        if (end - start + 1 <= 1) {
+        if (array.length <= 1) {
             return array; // base case for the single-indexes array parts
         }
 
