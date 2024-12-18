@@ -20,15 +20,15 @@ public class MergeSort {
         int length1 = middle - left + 1;
         int length2 = right - middle;
 
-        int[] L = new int[length1];
-        int[] R = new int[length2];
+        int[] leftArray = new int[length1];
+        int[] rightArray = new int[length2];
 
         for (int i = 0; i < length1; i++) {
-            L[i] = array[left + i];
+            leftArray[i] = array[left + i];
         }
 
         for (int j = 0; j < length2; j++) {
-            R[j] = array[middle + 1 + j];
+            rightArray[j] = array[middle + 1 + j];
         }
 
         int i = 0;
@@ -36,24 +36,24 @@ public class MergeSort {
         int k = left;
 
         while (i < length1 && j < length2) {
-            if (L[i] <= R[j]) {
-                array[k] = L[i];
+            if (leftArray[i] <= rightArray[j]) {
+                array[k] = leftArray[i];
                 i++;
             } else {
-                array[k] = R[j];
+                array[k] = rightArray[j];
                 j++;
             }
             k++;
         }
 
         while (i < length1) {
-            array[k] = L[i];
+            array[k] = leftArray[i];
             i++;
             k++;
         }
 
         while (j < length2) {
-            array[k] = R[j];
+            array[k] = rightArray[j];
             j++;
             k++;
         }
