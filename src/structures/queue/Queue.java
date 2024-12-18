@@ -13,7 +13,7 @@ public class Queue<T> {
         queue.addHead(value);
     }
 
-    public void unqueue() {
+    public void dequeue() {
         queue.removeTail();
     }
 }
