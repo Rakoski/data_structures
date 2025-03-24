@@ -1,4 +1,4 @@
-package algorithms.fibonacci;
+package algorithms.recursion.fibonacci;
 
 public class Fibonacci {
     public static int recursive(int num) {
