@@ -5,10 +5,10 @@ import java.util.Collections;
 import java.util.List;
 
 public class RecursiveSum {
-    public static int recusiveSum(List<Integer> num) {
-        if (num.size() == 1) return num.getFirst();
-        int first = num.getFirst();
-        List<Integer> remaining = new ArrayList<>(num.subList(1, num.size()));
+    public static int recusiveSum(List<Integer> nums) {
+        if (nums.size() == 1) return nums.getFirst();
+        int first = nums.getFirst();
+        List<Integer> remaining = nums.subList(1, nums.size());
         return first + recusiveSum(remaining);
     }
 
