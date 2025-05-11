@@ -2,14 +2,14 @@ package algorithms.recursion.factorial;
 
 public class Factorial {
 
-    public static int factorial(int fat) {
-        if (fat <= 1) return 1;
+    public static int fatorial(int numero) {
+        if (numero == 1) return 1;
         else {
-            return fat * factorial(fat - 1);
+            return numero * fatorial(numero - 1);
         }
     }
 
     public static void main(String[] args) {
-        System.out.println(factorial(5));
+        System.out.println(fatorial(5));
     }
 }

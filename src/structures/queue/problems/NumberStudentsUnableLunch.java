@@ -11,36 +11,40 @@ public class NumberStudentsUnableLunch {
         Stack<Integer> sandwichesStack = new Stack<>();
         Queue<Integer> studentsQueue = new ArrayDeque<>();
 
-        for (int i = sandwiches.length - 1; i >= 0; i--) {
-            sandwichesStack.push(sandwiches[i]);
-        }
+        addToStackAndQueue(sandwiches, sandwichesStack, students, studentsQueue);
 
-        for (int student : students) {
-            studentsQueue.offer(student);
-        }
-        int studentsWithSandwiches = 0;
         int studentsNoSandwitches = 0;
         int rotations = 0; // we need to check if the rotations we got
         // from a student are smaller than the size of the array with the
         // students, since we need to know how many students we have
         // and how many sandwiches are unable to be eaten
-        int size = studentsQueue.size();
+        int queueSize = studentsQueue.size();
 
-        while (!studentsQueue.isEmpty() && rotations < size) {
+        while (!studentsQueue.isEmpty() && rotations < queueSize) {
             if (Objects.equals(studentsQueue.peek(), sandwichesStack.peek())) {
                 studentsQueue.poll();
-                sandwichesStack.pop();
-                studentsWithSandwiches++;
+                sandwichesStack.pop(); //pop stack and queue (rm top of stack and first in queue)
                 rotations = 0; // return the rotations of the students back to 0
-                size--; // decrement the size of the queue
+                queueSize--; // decrement the size of the queue by 1
             } else {
                 int firstStudentInLine = studentsQueue.poll();
-                studentsQueue.offer(firstStudentInLine);
+                studentsQueue.offer(firstStudentInLine); // pop student and make him the last in line again
                 rotations++;
             }
         }
+
         studentsNoSandwitches = studentsQueue.size();
         return studentsNoSandwitches;
+    }
+
+    public static void addToStackAndQueue(int[] toStack, Stack<Integer> stack, int[] toQueue, Queue<Integer> queue) {
+        for (int i = toStack.length - 1; i >= 0; i--) {
+            stack.push(toStack[i]);
+        }
+
+        for (int student : toQueue) {
+            queue.offer(student);
+        }
     }
 
     public static void main(String[] args) {
