@@ -1,9 +1,14 @@
-package structures.graphs;
+package algorithms.dijkstra;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Graphs {
+public class Dijkstra {
+    Map<String, String> grafo = new HashMap<>();
+    Map<String, String> custos = new HashMap<>();
+    Map<String, String> pais = new HashMap<>();
+
     static Map<String, List<String>> graphImp = Map.of(
             "Você", List.of(
                     "Alice", "Bob", "Claire"
@@ -20,10 +25,9 @@ public class Graphs {
             "Anuj", List.of(),
             "Thom", List.of(),
             "Johnny", List.of(),
-            "Annecy", List.of());
+            "Annecy", List.of()
+    );
 
-    public static void main(String[] args) {
-        System.out.println(graphImp);
-    }
+
 
 }

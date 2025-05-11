@@ -23,6 +23,8 @@ public class QuickSort {
     }
 
     public static void main(String[] args) {
+        int[] oi = new int[]{1, 2, 3, 4};
+
         System.out.println(quicksort(new ArrayList<>(List.of(1, 2, 7, 0, 5, 20, 14))));
     }
 }
